@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    justify-content: space-between;
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #0336FF;
+    position: relative;
+}
+
+
+/* event creation side */
+.create_events{
+    right : 1rem;
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create_events form{
+    color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffde03;
+    padding : 30px 15px;
+    margin: 2rem 1rem;
+    border-radius: 5px;
+}
+
+.create_events label{
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.create_events h2{
+    margin: 0;
+    text-align: center;
+}
+
+.choose_date_and_time h3{
+    font-size: x-small;
+}
+
+.create_events #addbutton{
+    margin-top: 10px;
+    font-size: x-small;
+    color:black;
+    cursor: pointer;
+}
+
+
+/* event rendering side */
+
+.render_events{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.rendered_event_container{
+    display: flex;
+    padding: 1em;
+}
+
+.rendered_event_container .date_side{
+    background-color: #ffde03;
+    color:white;
+    text-align: center;
+    padding: 0.7em;
+}
+
+
+.rendered_event_container .title_side{
+    background-color: #bebba1;
+    color:black;
+    text-align: center;
+    padding: 0.7em;
+}
+
+
