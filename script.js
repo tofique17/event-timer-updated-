@@ -1,15 +1,15 @@
 /* getting elements via DOM*/
 const addBtn = document.querySelector("#addbutton");
-let titleInput = document.querySelector("#title");
-let descValue = document.querySelector("#description");
-let dateValue = document.querySelector("#event_date");
-let timeValue = document.querySelector("#event_time");
+const titleInput = document.querySelector("#title");
+const descValue = document.querySelector("#description");
+const dateValue = document.querySelector("#event_date");
+const timeValue = document.querySelector("#event_time");
 
 
 addBtn.addEventListener("click" , event => {
 
     /* getting values from date input*/
-let eventItem =  {
+const eventItem =  {
     title: titleInput.value,
     description: descValue.value,
     date: `${dateValue.value},${timeValue.value}`
@@ -62,7 +62,23 @@ let eventDay = myDate.getDate(myDate);
     default:
         eventMonth="Invalid month";
   }
+
+  /* using localStorage */
+    const dateStorage = `${eventDay} ${eventMonth}`
+    const eventStorage  = titleInput.value;
+   
+  if(dateStorage && eventStorage){
+    localStorage.setItem(dateStorage , eventStorage);
+    
+  }
   
+  for(let i = 0 ; i < localStorage ; i++){
+    const dateStorage = localStorage.dateStorage(i);
+    const eventStorage = localStorage.getItem(dateStorage)
+
+    
+  }
+  console.log(localStorage);
 
 /* Showing event date and event title on the left side*/
   let renderedEventsContainer = document.querySelector('.render_events');
