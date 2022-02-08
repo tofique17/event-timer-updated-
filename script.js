@@ -63,22 +63,7 @@ let eventDay = myDate.getDate(myDate);
         eventMonth="Invalid month";
   }
 
-  /* using localStorage */
-    const dateStorage = `${eventDay} ${eventMonth}`
-    const eventStorage  = titleInput.value;
-   
-  if(dateStorage && eventStorage){
-    localStorage.setItem(dateStorage , eventStorage);
-    
-  }
-  
-  for(let i = 0 ; i < localStorage.length ; i++){
-    const dateStorage = localStorage.dateStorage(i);
-    const eventStorage = localStorage.getItem(dateStorage)
 
-    
-  }
-  console.log(localStorage);
 
 /* Showing event date and event title on the left side*/
   let renderedEventsContainer = document.querySelector('.render_events');
@@ -98,7 +83,62 @@ let eventDay = myDate.getDate(myDate);
   renderedEvent.appendChild(titleSide);
   renderedEventsContainer.appendChild(renderedEvent);
 
-event.preventDefault();
+  
+
+    /* using localStorage */
+    const dateStorage = `${eventDay} ${eventMonth}`
+    const eventStorage  = titleInput.value;
+   
+  if(dateStorage && eventStorage){
+    localStorage.setItem(dateStorage , eventStorage);
+    
+  }
+  
+  for(let i = 0 ; i < localStorage ; i++){
+    const dateStorage = localStorage.dateStorage(i);
+    const eventStorage = localStorage.getItem(dateStorage);
+}
+
+
+
+  /* dragging process */
+  renderedEvent.draggable = true;
+  const trashIcon = document.querySelector(".trash");
+  
+  renderedEvent.addEventListener('dragstart' , dragStart);
+  renderedEvent.addEventListener('dragend' , dragEnd);
+
+  trashIcon.addEventListener('dragover' , dragOver);
+  trashIcon.addEventListener('dragenter' , dragEnter);
+  trashIcon.addEventListener('dragdrop' , dragDrop);
+
+  //drag functions
+  function dragStart(){
+    setTimeout(() => this.className = "invisible" , 0);
+  }
+
+  function dragEnd(){
+    renderedEvent.className = 'rendered_event_container';
+    dateSide.className = 'date_side';
+    titleSide.className = 'title_side';
+  }
+
+  function dragOver(e){
+    e.preventDefault();
+    console.log("drag over");
+  }
+
+  function dragEnter(e){
+    e.preventDefault();
+    console.log("drag enter");
+  }
+
+  function dragDrop(){
+      trashIcon.append(renderedEvent);
+  }
+
+  event.preventDefault();
+  
 })
 
 

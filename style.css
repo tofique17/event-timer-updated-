@@ -75,17 +75,39 @@ body{
 
 .rendered_event_container .date_side{
     background-color: #ffde03;
-    color:white;
+    color:black;
+    font-weight: 700;
     text-align: center;
     padding: 0.7em;
+    border-radius: 5px 0 0 5px;
 }
 
 
 .rendered_event_container .title_side{
     background-color: #bebba1;
     color:black;
+    font-weight: 500;
     text-align: center;
     padding: 0.7em;
+    border-radius: 0 5px 5px 0;
 }
 
+
+/* trash icon */
+.trash{
+    position : fixed;
+    bottom: 1rem;
+    left : 1rem;
+   
+}
+
+.trash img{
+    width :35px;
+}
+
+/* draggable dates*/
+
+.invisible{
+    display : none;
+}
 
