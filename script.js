@@ -72,7 +72,7 @@ let eventDay = myDate.getDate(myDate);
     
   }
   
-  for(let i = 0 ; i < localStorage ; i++){
+  for(let i = 0 ; i < localStorage.length ; i++){
     const dateStorage = localStorage.dateStorage(i);
     const eventStorage = localStorage.getItem(dateStorage)
 
