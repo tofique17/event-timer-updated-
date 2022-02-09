@@ -94,15 +94,15 @@ body{
 
 
 /* trash icon */
-.trash{
+#trash{
     position : fixed;
     bottom: 1rem;
     left : 1rem;
-   
+    width: 50px;
 }
 
-.trash img{
-    width :35px;
+#trash img{
+    width :30px;
 }
 
 /* draggable dates*/
